@@ -1,0 +1,23 @@
+# IntelliJ
+*.iml
+.idea/
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+
+# Version control
+vcs.xml
+
+# Android Studio captures folder
+captures/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Others
+.DS_Store
+.cx
