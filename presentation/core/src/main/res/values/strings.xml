@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General Terms -->
+    <string name="general_term_ok">Okay</string>
+
+    <!-- Error Messages -->
+    <string name="error_message_request_timeout">Request take so much time, please check your internet connection. Disable if VPN is enabled.</string>
+    <string name="error_message_invalid_request_response">An error occurred due to internal errors, please get contact with customer services.</string>
+    <string name="error_message_an_error_occurred">Oops, an error occurred…</string>
+</resources>

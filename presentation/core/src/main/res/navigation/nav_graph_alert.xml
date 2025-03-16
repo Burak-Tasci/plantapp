@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_alert"
+    app:startDestination="@id/alertDialogFragment">
+
+    <dialog
+        android:id="@+id/alertDialogFragment"
+        android:name="com.tsci.core.alert.AlertDialogFragment"
+        android:label="AlertDialogFragment" >
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <argument
+            android:name="positiveButton"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="negativeButton"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cancelable"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </dialog>
+
+
+</navigation>

@@ -21,4 +21,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "plantapp"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":presentation")
+include(":presentation:home")
+include(":presentation:onboarding")
+include(":presentation:paywall")
+include(":presentation:core")
+include(":presentation:sample")
