@@ -24,7 +24,7 @@ abstract class BaseViewModel : ViewModel() {
 
     fun <T> request(
         request: suspend () -> NetworkResult<T>,
-        onSuccess: (T) -> Unit,
+        onSuccess: suspend (T) -> Unit,
         onError: (suspend (NetworkError) -> Unit)? = null,
         showProgress: Boolean = true
     ) {

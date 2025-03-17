@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">PlantApp</string>
+    <!-- Get Started Screen -->
+    <string name="get_started_title">Welcome to PlantApp</string>
+    <string name="get_started_subtitle">Identify more than 3000+ plants and 88% accuracy.</string>
+    <string name="get_started_button_get_started">Get Started</string>
+    <string name="get_started_terms_of_use_and_privacy_policy">By tapping next, you are agreeing to PlantID Terms of Use &amp; Privacy Policy.</string>
+    <string name="get_started_terms_of_use_span">Terms of Use</string>
+    <string name="get_started_privacy_policy_span">Privacy Policy</string>
+
+    <!-- OnBoarding Screens -->
+    <string name="onboarding_button_continue">Continue</string>
+    <string name="onboarding_item_take_a_photo">Take a photo to identify the plant!</string>
+    <string name="onboarding_item_identify">identify</string>
+    <string name="onboarding_item_get_plant_care">Get plant care guides</string>
+    <string name="onboarding_item_care_guides">care guides</string>
+
+</resources>

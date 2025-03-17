@@ -8,6 +8,8 @@
     <include app:graph="@navigation/nav_graph_loading"/>
     <include app:graph="@navigation/nav_graph_alert" />
 
+    <include app:graph="@navigation/nav_graph_onboarding"/>
+
     <fragment
         android:id="@+id/sampleFragment"
         android:name="com.tsci.sample.SampleFragment"

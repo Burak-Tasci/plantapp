@@ -61,6 +61,7 @@ dependencies {
 
     implementation(project(":presentation:core"))
     implementation(project(":presentation:sample"))
+    implementation(project(":presentation:onboarding"))
     implementation(project(":domain"))
     implementation(project(":data"))
 
