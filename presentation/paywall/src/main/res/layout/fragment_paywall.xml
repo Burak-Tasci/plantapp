@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chinese_black"
+    tools:context=".PaywallFragment">
+
+    <!-- background and close button -->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_background_paywall" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewPaywallClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_padding_40"
+        android:layout_marginEnd="@dimen/screen_padding_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+
+    <!-- Content -->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPaywallTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:text="@string/paywall_title"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@id/textViewPaywallSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPaywallSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:layout_marginBottom="@dimen/screen_padding_24"
+        android:alpha="0.7"
+        android:text="@string/paywall_access_all_features"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@id/recyclerViewPaywallSubscriptionFeatures"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPaywallSubscriptionFeatures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/screen_padding_24"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/screen_padding_20"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutPaywallSubscriptionOneMonthContainer"
+        tools:listitem="@layout/item_paywall_feature" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutPaywallSubscriptionOneMonthContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:layout_marginBottom="@dimen/screen_padding_16"
+        android:background="@drawable/selector_subscription_option_background"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutPaywallSubscriptionOneYearContainer">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonPaywallSubscriptionOneMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_8"
+            android:background="@drawable/selector_subscription_radio_button"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallSubscriptionOneMonthTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_8"
+            android:layout_marginTop="@dimen/screen_padding_14"
+            android:layout_marginEnd="@dimen/screen_padding_14"
+            android:text="@string/paywall_one_month_title"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:fontFamily="@font/roboto_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/radioButtonPaywallSubscriptionOneMonth"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallSubscriptionOneMonthDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/screen_padding_14"
+            android:alpha="0.7"
+            android:text="@string/paywall_one_month_description"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textViewPaywallSubscriptionOneMonthTitle"
+            app:layout_constraintStart_toStartOf="@id/textViewPaywallSubscriptionOneMonthTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewPaywallSubscriptionOneMonthTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutPaywallSubscriptionOneYearContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:layout_marginBottom="@dimen/screen_padding_24"
+        android:background="@drawable/selector_subscription_option_background"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toTopOf="@id/buttonPaywallTryFree">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonPaywallSubscriptionOneYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_8"
+            android:background="@drawable/selector_subscription_radio_button"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallSubscriptionOneYearTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_8"
+            android:layout_marginTop="@dimen/screen_padding_14"
+            android:layout_marginEnd="@dimen/screen_padding_14"
+            android:text="@string/paywall_one_year_title"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:fontFamily="@font/roboto_semibold"
+            app:layout_constraintEnd_toStartOf="@id/textViewPaywallSubscriptionOneYearDiscount"
+            app:layout_constraintStart_toEndOf="@id/radioButtonPaywallSubscriptionOneYear"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallSubscriptionOneYearDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/screen_padding_14"
+            android:alpha="0.7"
+            android:text="@string/paywall_one_year_description"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textViewPaywallSubscriptionOneYearTitle"
+            app:layout_constraintStart_toStartOf="@id/textViewPaywallSubscriptionOneYearTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewPaywallSubscriptionOneYearTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallSubscriptionOneYearDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_subscription_one_year_discount"
+            android:paddingVertical="@dimen/screen_padding_4"
+            android:paddingStart="@dimen/screen_padding_10"
+            android:paddingEnd="@dimen/screen_padding_14"
+            android:text="@string/paywall_one_year_half_discount"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:fontFamily="@font/roboto_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPaywallTryFree"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:text="@string/paywall_button_try_free"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/textViewPaywallAutoRenewable" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPaywallAutoRenewable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_padding_20"
+        android:layout_marginBottom="@dimen/screen_padding_8"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:text="@string/paywall_auto_renewable"
+        android:textColor="@android:color/white"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutPaywallAgreementsContainer"
+        tools:ignore="SmallSp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPaywallAgreementsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/screen_padding_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallAgreementTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="@string/paywall_agreement_terms"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/screen_padding_6"
+            android:alpha="0.5"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallAgreementPrivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_6"
+            android:alpha="0.5"
+            android:text="@string/paywall_agreement_privacy"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/screen_padding_6"
+            android:alpha="0.5"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="@android:color/white" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPaywallAgreementRestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_6"
+            android:alpha="0.5"
+            android:text="@string/paywall_agreement_restore"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

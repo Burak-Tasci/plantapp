@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="155dp"
+    android:layout_height="124dp"
+    android:background="@drawable/background_subscription_feature"
+    android:padding="@dimen/screen_padding_16"
+    tools:layout_marginEnd="@dimen/screen_padding_8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewPaywallFeatureIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_feature_fast" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPaywallFeatureTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_padding_10"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:fontFamily="@font/roboto_semibold"
+        app:layout_constraintStart_toStartOf="@id/imageViewPaywallFeatureIcon"
+        app:layout_constraintTop_toBottomOf="@id/imageViewPaywallFeatureIcon"
+        tools:text="@string/paywall_feature_unlimited_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPaywallFeatureSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_padding_4"
+        android:alpha="0.7"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/textViewPaywallFeatureTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewPaywallFeatureTitle"
+        tools:text="@string/paywall_feature_unlimited_description" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.tsci.core.BaseFragment
+import com.tsci.core.navigation.NavigationRouter
 import com.tsci.onboarding.R
 import com.tsci.onboarding.databinding.FragmentOnBoardingBinding
 
@@ -57,7 +61,11 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
                     binding.viewPagerOnBoardingContent.setCurrentItem(1, true)
                 }
                 1 -> {
-                    // todo navigate paywall
+                    val request = NavDeepLinkRequest.Builder
+                        .fromUri(NavigationRouter.Paywall.uri.toUri())
+                        .build()
+
+                    findNavController().navigate(request)
                 }
                 else -> {
                     return@setOnClickListener
