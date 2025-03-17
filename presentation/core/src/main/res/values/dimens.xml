@@ -3,7 +3,11 @@
 
     <!-- Screen Paddings -->
     <dimen name="screen_padding_4">4dp</dimen>
+    <dimen name="screen_padding_6">6dp</dimen>
     <dimen name="screen_padding_8">8dp</dimen>
+    <dimen name="screen_padding_10">10dp</dimen>
+    <dimen name="screen_padding_12">12dp</dimen>
+    <dimen name="screen_padding_14">14dp</dimen>
     <dimen name="screen_padding_16">16dp</dimen>
     <dimen name="screen_padding_20">20dp</dimen>
     <dimen name="screen_padding_24">24dp</dimen>
@@ -12,6 +16,8 @@
 
     <dimen name="radius_8dp">8dp</dimen>
     <dimen name="radius_12dp">12dp</dimen>
+    <dimen name="radius_14dp">14dp</dimen>
+    <dimen name="radius_20dp">20dp</dimen>
     <dimen name="radius_24dp">24dp</dimen>
 
 </resources>

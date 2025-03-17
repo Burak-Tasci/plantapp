@@ -2,6 +2,8 @@ package com.tsci.plantapp.di
 
 import com.tsci.domain.user.usecase.GetIsOnBoardingShownUseCase
 import com.tsci.domain.user.usecase.IGetIsOnBoardingShownUseCase
+import com.tsci.domain.user.usecase.ISetOnBoardingShownUseCase
+import com.tsci.domain.user.usecase.SetOnBoardingShownUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,5 +20,12 @@ abstract class UseCaseModule {
     abstract fun provideGetIsOnBoardingShownUseCase(
         impl: GetIsOnBoardingShownUseCase
     ): IGetIsOnBoardingShownUseCase
+
+
+    @Binds
+    @ViewModelScoped
+    abstract fun provideSetOnBoardingShownUseCase(
+        impl: SetOnBoardingShownUseCase
+    ): ISetOnBoardingShownUseCase
 
 }

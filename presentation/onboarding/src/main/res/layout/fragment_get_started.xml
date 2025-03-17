@@ -79,6 +79,7 @@
         android:text="@string/get_started_terms_of_use_and_privacy_policy"
         android:textColor="@color/axolotl"
         android:textColorLink="@color/axolotl"
+        android:textColorHighlight="@android:color/transparent"
         android:textSize="11sp"
         app:fontWeight="400"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App Name -->
+    <string name="app_name">PlantApp</string>
 
     <!-- General Terms -->
     <string name="general_term_ok">Okay</string>

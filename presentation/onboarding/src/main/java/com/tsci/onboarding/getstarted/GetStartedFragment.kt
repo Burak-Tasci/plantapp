@@ -1,10 +1,10 @@
 package com.tsci.onboarding.getstarted
 
 import android.graphics.Typeface
-import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
+import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import com.tsci.core.BaseFragment
+import com.tsci.core.extension.showToastMessage
 import com.tsci.onboarding.R
 import com.tsci.onboarding.databinding.FragmentGetStartedBinding
 
@@ -38,7 +39,7 @@ class GetStartedFragment : BaseFragment<FragmentGetStartedBinding>() {
 
     private fun setTitleSpan() {
         val title = SpannableString(getString(R.string.get_started_title))
-        val appName = getString(R.string.app_name)
+        val appName = getString(com.tsci.core.R.string.app_name)
 
         val start = title.indexOf(appName).takeIf { it != -1 } ?: return
         val end = start + appName.length
@@ -80,6 +81,7 @@ class GetStartedFragment : BaseFragment<FragmentGetStartedBinding>() {
         agreementsSpannable.setUnderlinedClickableSpan(privacyPolicySpan)
 
         binding.textViewGetStartedTermsOfUseAndPrivacyPolicy.text = agreementsSpannable
+        binding.textViewGetStartedTermsOfUseAndPrivacyPolicy.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun SpannableString.setUnderlinedClickableSpan(span: String): SpannableString {
@@ -88,7 +90,7 @@ class GetStartedFragment : BaseFragment<FragmentGetStartedBinding>() {
         setSpan(UnderlineSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         setSpan(object : ClickableSpan() {
             override fun onClick(widget: View) {
-                // Handle Privacy Policy click
+                showToastMessage(span)
             }
         }, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 

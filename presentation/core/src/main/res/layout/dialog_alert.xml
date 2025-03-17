@@ -38,6 +38,7 @@
         tools:text="Cancel" />
 
     <com.google.android.material.button.MaterialButton
+        style="@style/GreenButton"
         android:id="@+id/buttonPositive"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

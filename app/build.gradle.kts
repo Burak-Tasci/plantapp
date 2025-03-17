@@ -62,6 +62,7 @@ dependencies {
     implementation(project(":presentation:core"))
     implementation(project(":presentation:sample"))
     implementation(project(":presentation:onboarding"))
+    implementation(project(":presentation:paywall"))
     implementation(project(":domain"))
     implementation(project(":data"))
 

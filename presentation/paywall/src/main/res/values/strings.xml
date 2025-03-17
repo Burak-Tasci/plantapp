@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="paywall_agreement_terms">Terms</string>
+    <string name="paywall_agreement_privacy">Privacy</string>
+    <string name="paywall_agreement_restore">Restore</string>
+
+    <string name="paywall_auto_renewable">After the 3-day free trial period you’ll be charged ₺274.99 per year unless you cancel before the trial expires. Yearly Subscription is Auto-Renewable</string>
+    <string name="paywall_button_try_free">Try free for 3 days</string>
+
+    <string name="paywall_one_year_title">1 Year</string>
+    <string name="paywall_one_year_description">First 3 days free, then $529,99/year</string>
+    <string name="paywall_one_year_half_discount">Save 50%</string>
+    <string name="paywall_one_month_title">1 Month</string>
+    <string name="paywall_one_month_description">$2.99/month, auto renewable</string>
+
+    <string name="paywall_feature_unlimited_title">Unlimited</string>
+    <string name="paywall_feature_unlimited_description">Plant Identity</string>
+    <string name="paywall_feature_faster_title">Faster</string>
+    <string name="paywall_feature_faster_description">Process</string>
+    <string name="paywall_feature_healthy_title">Healthy</string>
+    <string name="paywall_feature_healthy_description">Care Guides</string>
+
+    <string name="paywall_title">PlantApp Premium</string>
+    <string name="paywall_access_all_features">Access All Features</string>
+
+    <string name="paywall_subscription_none">None</string>
+    <string name="paywall_subscription_monthly">Monthly</string>
+    <string name="paywall_subscription_yearly">Yearly</string>
+
+    <string name="paywall_subscription_selected">%s subscription type selected!</string>
+</resources>

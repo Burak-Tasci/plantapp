@@ -1,6 +1,4 @@
 <resources>
-
-    <string name="app_name">PlantApp</string>
     <!-- Get Started Screen -->
     <string name="get_started_title">Welcome to PlantApp</string>
     <string name="get_started_subtitle">Identify more than 3000+ plants and 88% accuracy.</string>
