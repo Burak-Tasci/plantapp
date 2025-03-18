@@ -60,7 +60,6 @@ dependencies {
     implementation(libs.navigation.ui)
 
     implementation(project(":presentation:core"))
-    implementation(project(":presentation:sample"))
     implementation(project(":presentation:onboarding"))
     implementation(project(":presentation:paywall"))
     implementation(project(":presentation:host"))
