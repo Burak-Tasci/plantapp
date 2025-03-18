@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
@@ -62,7 +61,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
                 }
                 1 -> {
                     val request = NavDeepLinkRequest.Builder
-                        .fromUri(NavigationRouter.Paywall.uri.toUri())
+                        .fromUri(NavigationRouter.Paywall.uri)
                         .build()
 
                     findNavController().navigate(request)

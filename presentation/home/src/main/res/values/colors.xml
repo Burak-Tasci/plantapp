@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="premium_banner_title_start_color">#E5C990</color>
+    <color name="premium_banner_title_end_color">#E4B046</color>
+
+    <color name="premium_banner_subtitle_start_color">#FFDE9C</color>
+    <color name="premium_banner_subtitle_end_color">#F5C25B</color>
+
+
+</resources>

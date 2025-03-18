@@ -35,8 +35,7 @@ class MainViewModel @Inject constructor(
             },
             onSuccess = { isShown ->
                 val startDestinationId = if (isShown) {
-                    // todo should be home
-                    INVALID_START_DESTINATION
+                    com.tsci.home.R.id.nav_graph_home
                 } else {
                     com.tsci.onboarding.R.id.nav_graph_onboarding
                 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/snow"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="false"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewHomeTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_home_top_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewHomeWelcomeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding_20"
+            android:layout_marginTop="@dimen/screen_padding_48"
+            android:text="@string/home_hi_plant_lover"
+            android:textColor="@color/dark_jungle_green"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/textViewHomeDaytime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewHomeDaytime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding_20"
+            android:layout_marginTop="@dimen/screen_padding_6"
+            android:text="@string/home_good_afternoon"
+            android:textColor="@color/dark_jungle_green"
+            android:textSize="24sp"
+            app:fontFamily="@font/roboto_semibold"
+            app:layout_constraintBottom_toTopOf="@id/searchBarHomePlants"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewHomeWelcomeText" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchBarHomePlants"
+            style="@style/PlantApp.SearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding_20"
+            android:layout_marginVertical="@dimen/screen_padding_16"
+            android:background="@drawable/background_search_bar"
+            app:defaultQueryHint="@string/home_search_hint"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewHomeTop"
+            app:layout_constraintTop_toBottomOf="@id/textViewHomeDaytime"
+            app:queryBackground="@null"
+            app:queryHint="@string/home_search_hint"
+            app:searchIcon="@drawable/ic_search" />
+
+        <include
+            android:id="@+id/layoutBannerPremiumAvailable"
+            layout="@layout/banner_premium_available"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding_20"
+            android:layout_marginTop="@dimen/screen_padding_24"
+            app:layout_constraintTop_toBottomOf="@id/imageViewHomeTop" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHomeQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/screen_padding_24"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/screen_padding_20"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/layoutBannerPremiumAvailable"
+            tools:listitem="@layout/item_plant_question" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHomeCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding_12"
+            android:layout_marginTop="@dimen/screen_padding_16"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewHomeQuestions"
+            app:spanCount="2"
+            tools:listitem="@layout/item_plant_category" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
