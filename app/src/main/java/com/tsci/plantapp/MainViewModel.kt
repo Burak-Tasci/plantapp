@@ -35,7 +35,7 @@ class MainViewModel @Inject constructor(
             },
             onSuccess = { isShown ->
                 val startDestinationId = if (isShown) {
-                    com.tsci.home.R.id.nav_graph_home
+                    com.tsci.main.R.id.nav_graph_host_container
                 } else {
                     com.tsci.onboarding.R.id.nav_graph_onboarding
                 }

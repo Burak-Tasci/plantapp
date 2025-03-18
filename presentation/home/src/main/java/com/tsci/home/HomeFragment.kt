@@ -3,7 +3,6 @@ package com.tsci.home
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +27,6 @@ class HomeFragment : ViewModelFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun showBelowStatusBar(): Boolean = false
 
     override val viewModel: HomeViewModel by viewModels()
-
 
     override fun bindingInflater(
         inflater: LayoutInflater,
@@ -97,8 +95,6 @@ class HomeFragment : ViewModelFragment<FragmentHomeBinding, HomeViewModel>() {
         binding.recyclerViewHomeCategories.apply {
             adapter = PlantCategoriesAdapter(categories)
         }
-
-        Log.d("NetworkLog", "Categories: ${categories.joinToString()}")
     }
 
     private fun setupQuestionsAdapter(questions: List<QuestionUiModel>) {
@@ -110,8 +106,5 @@ class HomeFragment : ViewModelFragment<FragmentHomeBinding, HomeViewModel>() {
                 )
             )
         }
-
-        Log.d("NetworkLog", "Questions: ${questions.joinToString()}")
-
     }
 }
