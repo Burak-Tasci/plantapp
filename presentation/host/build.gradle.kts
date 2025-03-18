@@ -56,4 +56,5 @@ dependencies {
     implementation(project(":presentation:diagnose"))
     implementation(project(":presentation:mygarden"))
     implementation(project(":presentation:profile"))
+    implementation(project(":presentation:paywall"))
 }

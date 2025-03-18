@@ -39,6 +39,7 @@
         app:menu="@menu/menu_bottom_navigation" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHostIdentifyPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/green_crayola"
@@ -55,5 +56,10 @@
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Rounded"
         app:tint="@android:color/white" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupBottomNavigationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="bottomNavigationMenu,viewBottomNavigationMenuTopStroke,fabHostIdentifyPlant"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,8 +10,11 @@ import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import com.tsci.core.ViewModelFragment
 import com.tsci.core.extension.launchWhenResumed
+import com.tsci.core.navigation.NavigationRouter
 import com.tsci.core.util.HorizontalSpacerItemDecoration
 import com.tsci.home.databinding.FragmentHomeBinding
 import com.tsci.home.model.CategoryUiModel
@@ -38,6 +41,17 @@ class HomeFragment : ViewModelFragment<FragmentHomeBinding, HomeViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         setPremiumBannerTextColors()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding.layoutBannerPremiumAvailable.root.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri(NavigationRouter.Paywall.uri)
+                .build()
+
+            findNavController().navigate(request)
+        }
     }
 
     private fun setPremiumBannerTextColors() {

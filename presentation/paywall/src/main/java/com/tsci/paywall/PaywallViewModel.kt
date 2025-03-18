@@ -3,6 +3,7 @@ package com.tsci.paywall
 import androidx.lifecycle.viewModelScope
 import com.tsci.core.BaseViewModel
 import com.tsci.core.util.StringResource
+import com.tsci.domain.user.usecase.IGetIsOnBoardingShownUseCase
 import com.tsci.domain.user.usecase.ISetOnBoardingShownUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PaywallViewModel @Inject constructor(
-    private val setOnBoardingShownUseCase: ISetOnBoardingShownUseCase
+    private val setOnBoardingShownUseCase: ISetOnBoardingShownUseCase,
+    private val getOnOnBoardingShownUseCase: IGetIsOnBoardingShownUseCase
 ) : BaseViewModel() {
 
 
@@ -22,8 +24,8 @@ class PaywallViewModel @Inject constructor(
     private val _subscriptionSuccess = MutableStateFlow<StringResource>(StringResource.Empty)
     val subscriptionSuccess = _subscriptionSuccess.asStateFlow()
 
-    private val _navigateHome = MutableStateFlow(false)
-    val navigateHome = _navigateHome.asStateFlow()
+    private val _navigation = MutableStateFlow<PaywallNavigation>(PaywallNavigation.None)
+    val navigation = _navigation.asStateFlow()
 
     fun selectMonthlySubscription() {
         viewModelScope.launch {
@@ -47,12 +49,30 @@ class PaywallViewModel @Inject constructor(
     }
 
     fun closePaywall() {
+
+        request(
+            request = {
+                getOnOnBoardingShownUseCase.isOnBoardingShown()
+            }, onSuccess = { isShown ->
+                if (!isShown) {
+                    setOnBoardingShown()
+                } else {
+                    _navigation.emit(PaywallNavigation.Pop)
+                }
+            }
+        )
+
+
+
+    }
+
+    private fun setOnBoardingShown() {
         request(
             request = {
                 setOnBoardingShownUseCase.setShown()
             },
             onSuccess =  {
-                _navigateHome.emit(true)
+                _navigation.emit(PaywallNavigation.Home)
             },
             onError = {
                 showError(it)
