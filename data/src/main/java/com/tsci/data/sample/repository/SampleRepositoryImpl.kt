@@ -1,5 +1,6 @@
 package com.tsci.data.sample.repository
 
+import com.tsci.data.execute
 import com.tsci.data.sample.model.SampleResponse
 import com.tsci.data.sample.model.toDomainModel
 import com.tsci.data.sample.service.SampleApiService
@@ -17,16 +18,5 @@ class SampleRepositoryImpl @Inject constructor(
             apiCall = { apiService.getSampleData() },
             mapper = SampleResponse::toDomainModel
         )
-    }
-}
-
-
-inline fun <reified T, reified R> execute(
-    apiCall: () -> NetworkResult<T>,
-    mapper: (T) -> R
-): NetworkResult<R> {
-    return when (val result = apiCall()) {
-        is NetworkResult.Error -> NetworkResult.Error(result.error)
-        is NetworkResult.Success -> NetworkResult.Success(mapper.invoke(result.data))
     }
 }

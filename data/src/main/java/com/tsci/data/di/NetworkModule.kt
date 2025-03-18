@@ -2,6 +2,7 @@ package com.tsci.data.di
 
 import com.tsci.data.BuildConfig
 import com.tsci.data.NetworkResultCallAdapterFactory
+import com.tsci.data.plants.service.PlantsApiService
 import com.tsci.data.sample.model.SampleResponse
 import com.tsci.data.sample.service.SampleApiService
 import com.tsci.domain.NetworkError
@@ -43,6 +44,13 @@ object NetworkModule {
         .addCallAdapterFactory(NetworkResultCallAdapterFactory.create())
         .client(okHttpClient)
         .build()
+
+
+    @Singleton
+    @Provides
+    fun providePlantsApiService(retrofit: Retrofit): PlantsApiService {
+        return retrofit.create(PlantsApiService::class.java)
+    }
 
     @Singleton
     @Provides

@@ -1,7 +1,9 @@
 package com.tsci.plantapp.di
 
+import com.tsci.data.plants.repository.PlantsRepositoryImpl
 import com.tsci.data.sample.repository.SampleRepositoryImpl
 import com.tsci.data.user.repository.UserRepositoryImpl
+import com.tsci.domain.plants.repository.PlantsRepository
 import com.tsci.domain.sample.repository.SampleRepository
 import com.tsci.domain.user.repository.UserRepository
 import dagger.Binds
@@ -26,4 +28,10 @@ abstract class RepositoryModule {
     abstract fun bindUserRepository(
         userRepositoryImpl: UserRepositoryImpl
     ): UserRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindPlantsRepository(
+        plantsRepositoryImpl: PlantsRepositoryImpl
+    ): PlantsRepository
 }

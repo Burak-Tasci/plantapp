@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PlantApp.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@color/dark_jungle_green</item>
+        <item name="android:textColor">@color/dark_jungle_green</item>
+        <item name="android:textColorHint">@color/silver_foil</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import com.tsci.core.ViewModelFragment
 import com.tsci.core.extension.launchWhenResumed
 import com.tsci.core.extension.showToastMessage
+import com.tsci.core.navigation.NavigationRouter
 import com.tsci.core.util.HorizontalSpacerItemDecoration
 import com.tsci.core.util.StringResource
 import com.tsci.core.util.getText
@@ -78,7 +81,10 @@ class PaywallFragment : ViewModelFragment<FragmentPaywallBinding, PaywallViewMod
             launch {
                 viewModel.navigateHome.collect {
                     if (it) {
-                        // todo navigate home
+                       val request = NavDeepLinkRequest.Builder
+                           .fromUri(NavigationRouter.Home.uri)
+                           .build()
+                        findNavController().navigate(request)
                     }
                 }
             }

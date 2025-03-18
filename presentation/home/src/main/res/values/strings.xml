@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="home_hi_plant_lover">Hi, plant lover!</string>
+    <string name="home_good_afternoon">Good Afternoon! ⛅</string>
+
+    <string name="home_search_hint">Search for plants</string>
+
+    <string name="home_subscription_banner_title">FREE Premium Available</string>
+    <string name="home_subscription_banner_subtitle">Tap to upgrade your account!</string>
+
+</resources>

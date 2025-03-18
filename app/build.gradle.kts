@@ -63,6 +63,7 @@ dependencies {
     implementation(project(":presentation:sample"))
     implementation(project(":presentation:onboarding"))
     implementation(project(":presentation:paywall"))
+    implementation(project(":presentation:home"))
     implementation(project(":domain"))
     implementation(project(":data"))
 

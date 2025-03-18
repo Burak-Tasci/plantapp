@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_banner_premium_available"
+    android:paddingVertical="@dimen/screen_padding_12"
+    android:paddingStart="@dimen/screen_padding_16"
+    android:paddingEnd="@dimen/screen_padding_10">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBannerPremiumLetterNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_letter_notification" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBannerPremiumTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding_12"
+        android:layout_marginEnd="@dimen/screen_padding_8"
+        android:text="@string/home_subscription_banner_title"
+        android:textSize="21sp"
+        app:fontFamily="@font/roboto_semibold"
+        app:layout_constraintBottom_toTopOf="@id/textViewBannerPremiumSubtitle"
+        app:layout_constraintEnd_toStartOf="@id/imageViewBannerPremiumNavigate"
+        app:layout_constraintStart_toEndOf="@id/imageViewBannerPremiumLetterNotification"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:textColor="@android:color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBannerPremiumSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_subscription_banner_subtitle"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textViewBannerPremiumTitle"
+        app:layout_constraintStart_toStartOf="@id/textViewBannerPremiumTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewBannerPremiumTitle"
+        tools:textColor="@android:color/white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBannerPremiumNavigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_right_arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
