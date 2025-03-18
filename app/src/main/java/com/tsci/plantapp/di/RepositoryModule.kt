@@ -1,10 +1,8 @@
 package com.tsci.plantapp.di
 
 import com.tsci.data.plants.repository.PlantsRepositoryImpl
-import com.tsci.data.sample.repository.SampleRepositoryImpl
 import com.tsci.data.user.repository.UserRepositoryImpl
 import com.tsci.domain.plants.repository.PlantsRepository
-import com.tsci.domain.sample.repository.SampleRepository
 import com.tsci.domain.user.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -16,12 +14,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
-
-    @Binds
-    @Singleton
-    abstract fun bindSampleRepository(
-        sampleRepositoryImpl: SampleRepositoryImpl
-    ): SampleRepository
 
     @Binds
     @Singleton

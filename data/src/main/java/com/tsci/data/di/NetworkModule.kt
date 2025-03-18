@@ -3,11 +3,6 @@ package com.tsci.data.di
 import com.tsci.data.BuildConfig
 import com.tsci.data.NetworkResultCallAdapterFactory
 import com.tsci.data.plants.service.PlantsApiService
-import com.tsci.data.sample.model.SampleResponse
-import com.tsci.data.sample.service.SampleApiService
-import com.tsci.domain.NetworkError
-import com.tsci.domain.NetworkErrorType
-import com.tsci.domain.NetworkResult
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -50,22 +45,6 @@ object NetworkModule {
     @Provides
     fun providePlantsApiService(retrofit: Retrofit): PlantsApiService {
         return retrofit.create(PlantsApiService::class.java)
-    }
-
-    @Singleton
-    @Provides
-    fun provideSampleApiService(): SampleApiService {
-        return object : SampleApiService {
-            override suspend fun getSampleData(): NetworkResult<SampleResponse> {
-                return NetworkResult.Error(
-                    NetworkError(
-                        status = 408,
-                        type = NetworkErrorType.HTTP,
-                        path = null
-                    )
-                )
-            }
-        }
     }
 
 }
