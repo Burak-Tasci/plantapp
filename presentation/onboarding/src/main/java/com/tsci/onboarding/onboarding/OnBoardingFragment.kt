@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
@@ -49,6 +50,18 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
         super.onViewCreated(view, savedInstanceState)
         initViewPager()
         initListeners()
+        setupOnBackPressBehavior()
+    }
+
+    private fun setupOnBackPressBehavior() {
+
+        requireActivity().onBackPressedDispatcher.addCallback(owner = this) {
+            if (binding.viewPagerOnBoardingContent.currentItem == 1) {
+                binding.viewPagerOnBoardingContent.setCurrentItem(0, true)
+            } else {
+                findNavController().navigateUp()
+            }
+        }
     }
 
     private fun initListeners() {
