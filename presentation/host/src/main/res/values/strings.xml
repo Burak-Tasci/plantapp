@@ -1,0 +1,7 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="bottom_navbar_home">Home</string>
+    <string name="bottom_navbar_diagnose">Diagnose</string>
+    <string name="bottom_navbar_garden">My Garden</string>
+    <string name="bottom_navbar_profile">Profile</string>
+</resources>

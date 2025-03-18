@@ -9,8 +9,8 @@ sealed class NavigationRouter : NavigationUri {
         override val uri: Uri = "android-app://com.tsci.paywall/nav_graph_paywall/paywallFragment".toUri()
     }
 
-    data object Home: NavigationRouter() {
-        override val uri: Uri = "android-app://com.tsci.home/nav_graph_home/homeFragment".toUri()
+    data object Host: NavigationRouter() {
+        override val uri: Uri = "android-app://com.tsci.host/nav_graph_host_container/hostFragment".toUri()
 
     }
 

@@ -82,7 +82,7 @@ class PaywallFragment : ViewModelFragment<FragmentPaywallBinding, PaywallViewMod
                 viewModel.navigateHome.collect {
                     if (it) {
                        val request = NavDeepLinkRequest.Builder
-                           .fromUri(NavigationRouter.Home.uri)
+                           .fromUri(NavigationRouter.Host.uri)
                            .build()
                         findNavController().navigate(request)
                     }
